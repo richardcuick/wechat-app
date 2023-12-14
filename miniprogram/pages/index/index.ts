@@ -9,6 +9,7 @@ Component({
     userInfo: {
       avatarUrl: defaultAvatarUrl,
       nickName: '',
+      name:''
     },
     hasUserInfo: false,
     canIUseGetUserProfile: wx.canIUse('getUserProfile'),
@@ -29,12 +30,22 @@ Component({
         hasUserInfo: nickName && avatarUrl && avatarUrl !== defaultAvatarUrl,
       })
     },
-    onInputChange(e: any) {
+    onNickNameInputChange(e: any) {
       const nickName = e.detail.value
       const { avatarUrl } = this.data.userInfo
+      const { name } = this.data.userInfo
       this.setData({
         "userInfo.nickName": nickName,
-        hasUserInfo: nickName && avatarUrl && avatarUrl !== defaultAvatarUrl,
+        hasUserInfo: name && nickName && avatarUrl && avatarUrl !== defaultAvatarUrl,
+      })
+    },
+    onNameInputChange(e: any) {
+      const name = e.detail.value
+      const { avatarUrl } = this.data.userInfo
+      const { nickName } = this.data.userInfo
+      this.setData({
+        "userInfo.name": name,
+        hasUserInfo: name && nickName && avatarUrl && avatarUrl !== defaultAvatarUrl,
       })
     },
     getUserProfile() {

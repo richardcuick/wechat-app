@@ -4,8 +4,16 @@
     "pages/logs/logs"
   ],
   "window": {
-    "navigationBarTextStyle": "black",
-    "navigationStyle": "custom"
+    "navigationBarTitleText": "赛博理查",
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#9400D3",
+    "navigationStyle": "default"
+  },
+  "tabBar": {
+    "list":[
+      {"text": "首页","pagePath": "pages/index/index"},
+      {"text":"帮助","pagePath": "pages/logs/logs"}
+    ]
   },
   "style": "v2",
   "rendererOptions": {
